@@ -24,6 +24,7 @@ import {wSign} from './Wsign';
 import {xSign} from './Xsign';
 import {ySign} from './Ysign';
 import {zSign} from './Zsign';
+import {hiSign} from './Hisign';
 
 
 
@@ -54,6 +55,7 @@ const Handsigns = {
     xSign,
     ySign,
     zSign,
+    hiSign
 }
 
 

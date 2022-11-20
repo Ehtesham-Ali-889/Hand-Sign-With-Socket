@@ -130,6 +130,7 @@ export default function Home() {
           Handsigns.xSign,
           Handsigns.ySign,
           Handsigns.zSign,
+          Handsigns.hiSign
         ])
 
         const estimatedGestures = await GE.estimate(hand[0].landmarks, 6.5)
@@ -187,6 +188,7 @@ export default function Home() {
                 currentSign++
               }
               setSign(estimatedGestures.gestures[maxConfidence].name)
+              console.log("Sign",estimatedGestures.gestures[maxConfidence].name)
             }
           } else if (gamestate === "finished") {
             return
