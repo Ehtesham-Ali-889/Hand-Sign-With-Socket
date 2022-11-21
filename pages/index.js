@@ -41,6 +41,8 @@ export default function Home() {
   const [camState, setCamState] = useState("on")
 
   const [sign, setSign] = useState(null)
+  const [string, setString] = useState([])
+  // let string = '';
 
   let signList = []
   let currentSign = 0
@@ -188,6 +190,14 @@ export default function Home() {
                 currentSign++
               }
               setSign(estimatedGestures.gestures[maxConfidence].name)
+              const mysign=estimatedGestures.gestures[maxConfidence].name
+              console.log('mysign',mysign)
+              if (!string.includes(mysign)) {
+                string.push(mysign)
+              }
+              
+              // string+=estimatedGestures.gestures[maxConfidence].name;
+              console.log("Sentence",string)
               console.log("Sign",estimatedGestures.gestures[maxConfidence].name)
             }
           } else if (gamestate === "finished") {
@@ -290,6 +300,20 @@ export default function Home() {
             ) : (
               " "
             )}
+          </Box>
+
+          <Box style={{zIndex:'20',position:'fixed',top:'600px',left:'200px'}}>
+            {
+              string.length>0?
+              <h1>
+              Message
+            </h1>
+            :''
+            }
+            
+            {string.map(item => (
+              <span key={item}>{item} &nbsp;</span>
+            ))}
           </Box>
 
           <Box style={{zIndex:'20',position:'fixed',top:'500px'}}>
