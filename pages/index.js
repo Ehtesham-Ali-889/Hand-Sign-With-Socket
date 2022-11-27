@@ -108,7 +108,9 @@ export default function Home() {
           fp.Gestures.ThumbsUpGesture,
           Handsigns.hiSign,
           Handsigns.GoodMorningSign,
-          Handsigns.CoughSign
+          Handsigns.CoughSign,
+          Handsigns.NoseSign,
+          Handsigns.IhaveSign
         ])
 
         const estimatedGestures = await GE.estimate(hand[0].landmarks, 6.5)

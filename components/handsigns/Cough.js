@@ -1,6 +1,7 @@
 import {Finger, FingerCurl, FingerDirection, GestureDescription} from 'fingerpose';
 
 export const CoughSign = new GestureDescription('Bad_Cough');
+//  Bad cough is S
 // [
 //     [
 //       "Thumb",

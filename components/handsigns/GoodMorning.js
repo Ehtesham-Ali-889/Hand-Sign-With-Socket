@@ -1,6 +1,7 @@
 import {Finger, FingerCurl, FingerDirection, GestureDescription} from 'fingerpose';
 
 export const GoodMorningSign = new GestureDescription('GoodMorning');
+// good morning is h
 // [
 //     [
 //       "Thumb",
