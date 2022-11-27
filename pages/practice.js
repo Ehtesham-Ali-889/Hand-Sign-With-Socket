@@ -30,8 +30,13 @@ import Metatags from "../components/metatags"
 import { RiCameraFill, RiCameraOffFill } from "react-icons/ri"
 
 
-
+import {useSpeachSynthesisApi} from '../hooks/Speechhelp'
 export default function Home() {
+  // const {
+  //   speak
+  // } = useSpeachSynthesisApi();
+
+  // var msg = new SpeechSynthesisUtterance();
 
   const [addcall,setAddCall]=useState('Add Call')
   
@@ -106,9 +111,33 @@ export default function Home() {
         //loading the fingerpose model
         const GE = new fp.GestureEstimator([
           fp.Gestures.ThumbsUpGesture,
-          Handsigns.hiSign,
-          Handsigns.GoodMorningSign,
-          Handsigns.ProblemSign
+          Handsigns.aSign,
+          Handsigns.bSign,
+          Handsigns.cSign,
+          Handsigns.dSign,
+          Handsigns.eSign,
+          Handsigns.fSign,
+          Handsigns.gSign,
+          Handsigns.hSign,
+          Handsigns.iSign,
+          Handsigns.jSign,
+          Handsigns.kSign,
+          Handsigns.lSign,
+          Handsigns.mSign,
+          Handsigns.nSign,
+          Handsigns.oSign,
+          Handsigns.pSign,
+          Handsigns.qSign,
+          Handsigns.rSign,
+          Handsigns.sSign,
+          Handsigns.tSign,
+          Handsigns.uSign,
+          Handsigns.vSign,
+          Handsigns.wSign,
+          Handsigns.xSign,
+          Handsigns.ySign,
+          Handsigns.zSign,
+          Handsigns.hiSign
         ])
 
         const estimatedGestures = await GE.estimate(hand[0].landmarks, 6.5)
@@ -165,7 +194,8 @@ export default function Home() {
               ) {
                 currentSign++
               }
-              setSign(estimatedGestures.gestures[maxConfidence].name)
+              setSign(estimatedGestures.gestures[maxConfidence].name);
+              // msg.text = estimatedGestures.gestures[maxConfidence].name
               const mysign=estimatedGestures.gestures[maxConfidence].name
               console.log('mysign',mysign)
               if (!string.includes(mysign)) {
@@ -186,7 +216,6 @@ export default function Home() {
       drawHand(hand, ctx)
     }
   }
-
   //   if (sign) {
   //     console.log(sign, Signimage[sign])
   //   }
@@ -269,7 +298,7 @@ export default function Home() {
                       : "/loveyou_emoji.svg"
                   }
                   style={{
-                    height: 100,
+                    height: 30,
                   }}
                 />
               </div>
@@ -279,6 +308,7 @@ export default function Home() {
           </Box>
 
           <Box style={{zIndex:'20',position:'fixed',top:'600px',left:'200px'}}>
+            
             {
               string.length>0?
               <h1>
