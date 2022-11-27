@@ -26,7 +26,7 @@ import Y_sign from "./Y.svg"
 import Z_sign from "./Z.svg"
 import Hi_sign from "./Hi.svg"
 import GoodMorning_sign from "./GoodMorning.svg"
-import Problem_sign from "./Problem.svg"
+import Cough_Sign from './cough.svg'
 
 import A_hand from "./Ahand.svg"
 import B_hand from "./Bhand.svg"
@@ -83,7 +83,8 @@ export const Signimage = {
   Y: Y_sign,
   Z: Z_sign,
   Hi: Hi_sign,
-  GoodMorning: GoodMorning_sign
+  GoodMorning: GoodMorning_sign,
+  Bad_Cough: Cough_Sign
 }
 
 export const Signpass = [
@@ -200,7 +201,7 @@ export const Signpass = [
     alt: "GoodMorning",
   },
   {
-    src: Problem_sign,
-    alt: "Problem",
+    src: Cough_Sign,
+    alt: "BadCough",
   },
 ]

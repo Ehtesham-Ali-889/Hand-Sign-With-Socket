@@ -26,7 +26,7 @@ import {ySign} from './Ysign';
 import {zSign} from './Zsign';
 import {hiSign} from './Hisign';
 import {GoodMorningSign} from './GoodMorning';
-import {ProblemSign} from './Problem';
+import {CoughSign} from './Cough';
 
 
 
@@ -59,7 +59,7 @@ const Handsigns = {
     zSign,
     hiSign,
     GoodMorningSign,
-    ProblemSign
+    CoughSign
 }
 
 
