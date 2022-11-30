@@ -6,6 +6,7 @@
   "author": "Syauqy <syauqyaziz@gmail.com>",
   "dependencies": {
     "@chakra-ui/gatsby-plugin": "^1.0.0",
+    "@chakra-ui/icons": "^2.0.13",
     "@chakra-ui/react": "^1.0.4",
     "@emotion/react": "^11.1.4",
     "@emotion/styled": "^11.0.0",
@@ -17,10 +18,11 @@
     "next": "latest",
     "prop-types": "^15.7.2",
     "react": "latest",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "latest",
     "react-helmet": "^6.1.0",
     "react-hook-speech-to-text": "^0.8.0",
-    "react-icons": "^4.1.0",
+    "react-icons": "^4.7.1",
     "react-webcam": "^5.2.2"
   },
   "devDependencies": {

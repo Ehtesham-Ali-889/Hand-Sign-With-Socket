@@ -6,6 +6,8 @@ import { drawHand } from "../components/handposeutil"
 import * as fp from "fingerpose"
 import Handsigns from "../components/handsigns"
 
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+
 import {
   Text,
   Heading,
@@ -17,8 +19,12 @@ import {
   VStack,
   ChakraProvider,
   Alert,
+  Icon,
+  Input
 } from "@chakra-ui/react"
 
+import {CopyIcon} from 'react-icons'
+import { IoCopy } from "react-icons/io5"
 import { Signimage, Signpass } from "../components/handimage"
 
 import About from "../components/about"
@@ -32,9 +38,12 @@ import { RiCameraFill, RiCameraOffFill } from "react-icons/ri"
 
 
 
+
 export default function Home() {
 
   const [addcall,setAddCall]=useState('Add Call')
+
+  const [callcode,setCallCode]=useState('1234')
   
   const webcamRef = useRef(null)
   const canvasRef = useRef(null)
@@ -289,33 +298,43 @@ export default function Home() {
             </h1>
             :''
             }
-            <div style={{backgroundColor:'#A8DDFD',padding:'20px',color:'black',borderRadius:'10px'}}>
-            {/* <div style={{position: "relative",
-    marginLeft: "20px",
-    marginBottom: "10px",
-    padding: "10px",
-    backgroundColor: "#A8DDFD",
-    // width: 200px;
-    // height: 50px;
-    textAlign: "left",
-    font: "400 .9em 'Open Sans', sans-serif",
-    border: "1px solid #97C6E3",
-    borderRadius: "10px"}}
-    > */}
-   
+            {
+              string.length>0?
+              <div style={{backgroundColor:'#A8DDFD',padding:'20px',color:'black',borderRadius:'10px'}}>
+            
 
             
             {string.map(item => (
               <span key={item}>{item} &nbsp;</span>
             ))}
             </div>
+            :''
+            }
+            
           </Box>
 
-          <Box style={{zIndex:'20',position:'fixed',top:'500px'}}>
+          <Box style={{zIndex:'20',position:'fixed',top:'480px',display:'flex',flexDirection:'column',margin:'30px',
+          backgroundColor:'white'
+          }}>
+            <Input placeholder='Paste Call Code Here' />
+          </Box>
+
+          <Box style={{zIndex:'20',position:'fixed',top:'550px',display:'flex',flexDirection:'column',margin:'30px'}}>
+              <div style={{textAlign:'center'}}>
+                <h1 style={{fontSize:'32px',fontWeight:'bold'}}>{callcode}</h1>
+              </div>
+              
+              <CopyToClipboard text={callcode}>
+                <Button><IoCopy></IoCopy> Copy to clipboard</Button>
+              </CopyToClipboard>
+          </Box>
+
+          <Box style={{zIndex:'20',position:'fixed',top:'700px'}}>
             <Button onClick={updatecall}>
               {addcall}
             </Button>
           </Box>
+          
           {
             addcall=='Stop Call'?
             <Box bgColor="#fff">
