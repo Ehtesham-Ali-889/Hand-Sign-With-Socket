@@ -16,6 +16,7 @@ import {
   Box,
   VStack,
   ChakraProvider,
+  Alert,
 } from "@chakra-ui/react"
 
 import { Signimage, Signpass } from "../components/handimage"
@@ -283,15 +284,31 @@ export default function Home() {
           <Box style={{zIndex:'20',position:'fixed',top:'600px',left:'200px'}}>
             {
               string.length>0?
-              <h1>
+              <h1 style={{fontWeight:'bold',fontSize:'24px'}}>
               Message
             </h1>
             :''
             }
+            <div style={{backgroundColor:'#A8DDFD',padding:'20px',color:'black',borderRadius:'10px'}}>
+            {/* <div style={{position: "relative",
+    marginLeft: "20px",
+    marginBottom: "10px",
+    padding: "10px",
+    backgroundColor: "#A8DDFD",
+    // width: 200px;
+    // height: 50px;
+    textAlign: "left",
+    font: "400 .9em 'Open Sans', sans-serif",
+    border: "1px solid #97C6E3",
+    borderRadius: "10px"}}
+    > */}
+   
+
             
             {string.map(item => (
               <span key={item}>{item} &nbsp;</span>
             ))}
+            </div>
           </Box>
 
           <Box style={{zIndex:'20',position:'fixed',top:'500px'}}>
